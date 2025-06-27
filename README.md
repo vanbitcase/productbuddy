@@ -183,7 +183,7 @@ product_recommender.py
 product.py
 ```
 ---
-## Google Colab file for data processcing and Cleaning
+## Google Colab file for data Processing and Cleaning
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16O0A4dlzYiGgwRoHeL6eq6jeuNtrXWEH?usp=sharing)
 
