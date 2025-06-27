@@ -102,13 +102,27 @@ print(response.json())
 - `DELETE /api/orders/<id>/`  
   Delete an order.
 
-#### Example: Place an Order (Python)
+#### Example: Place an Order
 ```python
 import requests
 url = "http://127.0.0.1:8080/api/orders/"
 data = {"product_ids": [1, 2, 3]}
 response = requests.post(url, json=data)
 print(response.json())
+```
+#### Example: To delete an product 
+```python
+import requests
+
+product_id = 1 
+url = f"http://127.0.0.1:8080/api/products/{product_id}/"
+
+response = requests.delete(url)
+
+if response.status_code == 204:
+    print("Product deleted successfully.")
+else:
+    print("Error:", response.status_code, response.text)
 ```
 
 ---
@@ -127,7 +141,7 @@ print(response.json())
   }
   ```
 
-#### Example: Get Recommendations (Python)
+#### Example: Get Recommendations 
 ```python
 import requests
 url = "http://127.0.0.1:8080/api/recommend/"
