@@ -53,7 +53,7 @@ docker run --rm \
 ---
 ## After installation Use new terminal to make migrations
 ```
-# use you image name in replace of productbuddy_web
+# use your image name in replace of productbuddy_web
 # make sure manage.py is visible in the working directory
 
 docker exec -it productbuddy_web python manage.py make migration
