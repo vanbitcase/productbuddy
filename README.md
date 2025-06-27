@@ -37,6 +37,28 @@ ProductBuddy is a Django-based REST API for managing products and orders, with a
 
 3. The database will be initialized with `data.sql` if present.
 
+4. USE mysql-volume.tar.gz  to extract the preloaded data
+```sh
+docker volume create mysql_data_restore
+```
+Then,
+```
+docker run --rm \
+  -v mysql_data_restore:/volume \
+  -v $(pwd):/backup \
+  alpine \
+  sh -c "cd /volume && tar xzvf /backup/mysql-volume.tar.gz"
+
+```
+---
+## After installation Use new terminal to make migrations
+```
+# use you image name in replace of productbuddy_web
+# make sure manage.py is visible in the working directory
+
+docker exec -it productbuddy_web python manage.py make migration
+
+```
 ---
 
 ## API Endpoints
@@ -182,21 +204,6 @@ order.py
 product_recommender.py
 product.py
 ```
----
-## USE mysql-volume.tar.gz  to extract the preloaded data
-```sh
-docker volume create mysql_data_restore
-```
-Then,
-```
-docker run --rm \
-  -v mysql_data_restore:/volume \
-  -v $(pwd):/backup \
-  alpine \
-  sh -c "cd /volume && tar xzvf /backup/mysql-volume.tar.gz"
-
-```
----
 ---
 ## Google Colab file for data Processing and Cleaning
 
