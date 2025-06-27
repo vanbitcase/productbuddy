@@ -12,6 +12,12 @@ ProductBuddy is a Django-based REST API for managing products and orders, with a
 
 ---
 
+## 📽️ Demo
+
+[Watch Product Buddy Demo](https://drive.google.com/file/d/1Ly-R-MA0FqKMn36y2hlQQNfgShGCIQ7q/view?usp=sharing)
+
+---
+
 ## Getting Started
 
 ### Prerequisites
