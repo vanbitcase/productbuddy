@@ -156,13 +156,17 @@ productbuddy/
   docker-compose.yml  # Docker setup for API and MySQL
   productbuddy/       # Django project settings
   data.sql            # Initial DB data (optional)
-product.py            # Example: Product API usage
-order.py              # Example: Order API usage
-product_recommend.py  # Example: Recommendation API usage
-```
-
-
-
+  Dockerfile
+  README.md
+  manage.py
+  mysql-volume.tar.gz  #backup file
+  products.csv
+  requirement.txt
+  tfidf_matrix.npz
+  tfidf_vectorizer.pkl
+order.py
+product_recommender.py
+product.py
 ---
 
 ## Contact
