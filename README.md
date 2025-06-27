@@ -183,6 +183,21 @@ product_recommender.py
 product.py
 ```
 ---
+## USE mysql-volume.tar.gz  to extract the preloaded data
+```sh
+docker volume create mysql_data_restore
+```
+Then,
+```
+docker run --rm \
+  -v mysql_data_restore:/volume \
+  -v $(pwd):/backup \
+  alpine \
+  sh -c "cd /volume && tar xzvf /backup/mysql-volume.tar.gz"
+
+```
+---
+---
 ## Google Colab file for data Processing and Cleaning
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16O0A4dlzYiGgwRoHeL6eq6jeuNtrXWEH?usp=sharing)
