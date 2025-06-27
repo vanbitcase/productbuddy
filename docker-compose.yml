@@ -12,12 +12,16 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
+      - mysql_data_restore:/var/lib/mysql  # Use restored volume
 
   web:
-    build: .               
+    build: .
     container_name: productbuddy_web
     ports:
       - "8080:8080"
     depends_on:
       - db
+
+volumes:
+  mysql_data_restore:
+    external: true
