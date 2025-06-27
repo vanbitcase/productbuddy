@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: buddydb
+      MYSQL_USER: buddyuser
+      MYSQL_PASSWORD: buddypass
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
+
+  web:
+    build: .               
+    container_name: productbuddy_web
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
